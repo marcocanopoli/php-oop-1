@@ -32,17 +32,22 @@
 
             <!-- movie card details-->
             <img src="<?= ${$movieString}->posterPath ?>" alt="<?= ${$movieString}->originalTitle ?>">
-            <h2><?= ${$movieString}->originalTitle ?></h2>
+            <h2><?= strtoupper(${$movieString}->originalTitle) ?></h2>
             <h3><?= 'Director: ' . ${$movieString}->director ?></h3>
-            <h4><?= 'Language: ' . ${$movieString}->language ?></h4>
-            <h4><?= 'Country: ' . ${$movieString}->country ?></h4>
+            <span><?= 'Language: ' . ${$movieString}->language ?></span><br>
+            <span><?= 'Country: ' . ${$movieString}->country ?></span><br>           
             <div>
-                
+                <?php foreach (${$movieString}->genres as $genre) {?>
+                    <h5><?= strtoupper($genre) ?></h5>
+                <?php } ?>
             </div>
-            <div>
-                
+            <p class="overview"><?= ${$movieString}->overview ?></p>
+            <h4>Cast:</h4>
+            <div class="cast">
+                <?php foreach (${$movieString}->cast as $actor) {?>
+                    <span><?= $actor?></span><br>
+                <?php } ?>
             </div>
-            <p><?= ${$movieString}->overview ?></p>
             <h5><?= 'Average rating: ' . ${$movieString}->avgRating ?></h5>
             <h5><?= 'Total votes: ' . count(${$movieString}->ratings) ?></h5>
             <!-- /movie card details -->
