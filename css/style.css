@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {    
+    text-align: center;
+    margin: 25px 0;
+}
+
+
+img {
+    height: 350px;
+}
+
+.wrapper {
+    width: 70%;
+    margin: 0 auto;   
+}
+
+.movie {
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 15px;    
+}
+.movie > * {
+    margin-bottom: 15px;
+}
